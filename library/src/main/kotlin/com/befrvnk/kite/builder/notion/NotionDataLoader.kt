@@ -1,6 +1,7 @@
 package com.befrvnk.kite.builder.notion
 
 import com.befrvnk.kite.Page
+import com.befrvnk.kite.logger
 import com.befrvnk.knotion.Knotion
 import com.befrvnk.knotion.objects.block.ChildPage
 import kotlinx.datetime.Instant
@@ -16,7 +17,7 @@ internal class NotionDataLoader(integrationToken: String) {
     }
 
     suspend fun loadData(page: NotionPage): List<Page> {
-        com.befrvnk.kite.logger.debug { "${page.path} - Loading data" }
+        logger.debug { "${page.path} - Loading data" }
         val id = page.url.notionId()
         val notionDataList = retrieveNotionData(
             pageId = id,
@@ -42,7 +43,7 @@ internal class NotionDataLoader(integrationToken: String) {
         isRoot: Boolean,
         parentPath: String,
     ): List<NotionData> {
-        com.befrvnk.kite.logger.debug { "Loading data for $pageId" }
+        logger.debug { "Loading data for $pageId" }
         val notionBlocks = knotion.blocksEndpoint.retrieveBlockChildren(pageId).body()!!
         val notionPage = knotion.pagesEndpoint.retrievePage(pageId).body()!!
         val user = knotion.usersEndpoint.retrieveUser(notionPage.createdBy.id).body()!!

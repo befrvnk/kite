@@ -1,5 +1,11 @@
 package com.befrvnk.kite.builder.notion
 
+import com.befrvnk.kite.block.Annotations
+import com.befrvnk.kite.block.HeaderImage
+import com.befrvnk.kite.block.Heading
+import com.befrvnk.kite.block.HeadingType
+import com.befrvnk.kite.block.Text
+import com.befrvnk.kite.logger
 import com.befrvnk.knotion.objects.Page
 import com.befrvnk.knotion.objects.block.Block
 import com.befrvnk.knotion.objects.block.Bookmark
@@ -33,13 +39,9 @@ import com.befrvnk.knotion.objects.block.Toggle
 import com.befrvnk.knotion.objects.block.Video
 import com.befrvnk.knotion.objects.other.ExternalFile
 import com.befrvnk.knotion.objects.other.NotionFile
-import com.befrvnk.knotion.objects.richtext.Annotations
 import com.befrvnk.knotion.objects.richtext.RichText
 import com.befrvnk.knotion.objects.user.User
-import com.befrvnk.kite.block.HeaderImage
-import com.befrvnk.kite.block.Heading
-import com.befrvnk.kite.block.HeadingType
-import com.befrvnk.kite.block.Text
+import com.befrvnk.knotion.objects.richtext.Annotations as KnotionAnnotations
 
 internal data class NotionData(
     val path: String,
@@ -52,7 +54,7 @@ internal data class NotionData(
 }
 
 internal fun NotionData.toKsitePage(linksMapping: Map<String, String>): com.befrvnk.kite.Page {
-    fun Annotations.toAnnotations() = com.befrvnk.kite.block.Annotations(
+    fun KnotionAnnotations.toAnnotations() = Annotations(
         bold = bold,
         italic = italic,
         strikethrough = strikethrough,
@@ -140,7 +142,7 @@ internal fun NotionData.toKsitePage(linksMapping: Map<String, String>): com.befr
             is Video -> null
         }
     }
-    com.befrvnk.kite.logger.debug { "$path - Creating Page" }
+    logger.debug { "$path - Creating Page" }
     return com.befrvnk.kite.Page(
         path = path,
         title = title,
