@@ -1,0 +1,27 @@
+[versions]
+kotlin = "1.8.21"
+
+knotion = "0.1.0-SNAPSHOT"
+kotlin-css = "1.0.0-pre.570"
+kotlin-logging = "4.0.0"
+kotlinx-datetime = "0.4.0"
+kotlinx-html-jvm = "0.7.2"
+ktor = "2.3.1"
+publish = "0.25.3"
+scrimage = "4.0.37"
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
+
+[libraries]
+knotion = { module = "com.befrvnk:knotion-jvm", version.ref = "knotion" }
+kotlin-css = { module = "org.jetbrains.kotlin-wrappers:kotlin-css", version.ref = "kotlin-css" }
+kotlin-logging = { module = "io.github.oshai:kotlin-logging", version.ref = "kotlin-logging" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+kotlinx-html-jvm = { module = "org.jetbrains.kotlinx:kotlinx-html-jvm", version.ref = "kotlinx-html-jvm" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-server-html-builder = { module = "io.ktor:ktor-server-html-builder-jvm", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
+scrimage = { module = "com.sksamuel.scrimage:scrimage-core", version.ref = "scrimage" }
