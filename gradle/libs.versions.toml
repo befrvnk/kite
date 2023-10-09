@@ -8,7 +8,7 @@ kotlinx-datetime = "0.4.1"
 kotlinx-html-jvm = "0.9.1"
 ktor = "2.3.5"
 publish = "0.25.3"
-scrimage = "4.1.0"
+scrimage = "4.1.1"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
