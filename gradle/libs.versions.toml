@@ -2,7 +2,7 @@
 kotlin = "1.9.10"
 
 knotion = "0.1.0-SNAPSHOT"
-kotlin-css = "1.0.0-pre.634"
+kotlin-css = "1.0.0-pre.635"
 kotlin-logging = "5.1.0"
 kotlinx-datetime = "0.4.1"
 kotlinx-html-jvm = "0.9.1"
