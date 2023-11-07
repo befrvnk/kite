@@ -6,7 +6,7 @@ kotlin-css = "1.0.0-pre.638"
 kotlin-logging = "5.1.0"
 kotlinx-datetime = "0.4.1"
 kotlinx-html-jvm = "0.9.1"
-ktor = "2.3.5"
+ktor = "2.3.6"
 publish = "0.25.3"
 scrimage = "4.1.1"
 
